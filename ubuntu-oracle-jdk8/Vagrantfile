@@ -1,0 +1,19 @@
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
+
+Vagrant.configure("2") do |config|
+
+  config.vm.synced_folder "c:/var/workshops/intro-to-docker/share-with-container", "/host_to_container"
+
+  config.vm.define "ubuntu-oracle-jdk8" do |m|
+  
+    m.vm.provider :docker do |d| 
+      d.build_dir = "./docker"
+      d.cmd = ["ping", "-c 600", "127.0.0.1"] 
+	  d.name = 'ubuntu-oracle-jdk8'
+      d.vagrant_machine = "dockerhost"
+      d.vagrant_vagrantfile = "../docker-host/DockerHostVagrantfile" 
+      d.remains_running = true 
+	  end
+  end 
+
+end  
