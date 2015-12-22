@@ -1,4 +1,4 @@
-# Ubuntu Oracle JDK 8 Container
+# Ubuntu Container with Oracle JDK 8
 
 Uses [frolvlad's approach](https://hub.docker.com/r/frolvlad/alpine-oraclejdk8/) but modified to work with Ubuntu 14.04.
 
