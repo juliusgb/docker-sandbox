@@ -1,2 +1,2 @@
 
-Contains docker images.
+Uses vagrant to manage docker containers.
